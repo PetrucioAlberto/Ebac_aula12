@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 
+import produtoPage from "../../cypress/support/page_objects/produto.Page";
+
 context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
   /*  Como cliente 
       Quero acessar a Loja EBAC 
@@ -10,12 +12,40 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
       E validando minha compra ao final */
 
   beforeEach(() => {
-      cy.visit('/')
+    produtoPage.realizarLogin()
   });
 
-  it('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
-      //TODO: Coloque todo o fluxo de teste aqui, considerando as boas práticas e otimizações
-      
+  it.only('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
+
+    // produto 1
+    produtoPage.escolherProduto1_1( )
+    produtoPage.validarPagina('.product_title','Apollo Running Short')
+    produtoPage.escolhertamanho('.button-variable-item-', '33')
+    produtoPage.escolherCor('.variable-item.button-variable-item.button-variable-item-', 'Black')
+    produtoPage.botaoComprar('.single_add_to_cart_button')
+
+     // produto 2
+    produtoPage.escolherProdutoBarraPesquisa_2('Eos V-Neck Hoodie')
+    produtoPage.validarPagina('.product_title','Eos V-Neck Hoodie')
+    produtoPage.escolhertamanho('.button-variable-item-','M')
+    produtoPage.escolherCor('.button-variable-item-','Green')
+    produtoPage.botaoComprar('.single_add_to_cart_button')
+
+     // produto 3
+    produtoPage.escolherProduto3_3()
+
+    // produto 4
+    produtoPage.escolherProduto4_4()
+
+    // adicionando ao carrinho
+    produtoPage.verificarProdutosCarrinhos()
+
+    // confirmando produto
+    produtoPage.confirmarPedido()
+
+    //pagando
+    produtoPage.verificarPagamento()
+    cy.screenshot() 
   });
 
 
