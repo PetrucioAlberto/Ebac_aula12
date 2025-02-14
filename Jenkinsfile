@@ -1,8 +1,8 @@
 pipeline {
     agent any
 
-    environment {
-        CI = 'true'
+    tools { 
+        nodejs 'node-20.16.0' 
     }
 
     stages {
