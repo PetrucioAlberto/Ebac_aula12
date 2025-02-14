@@ -8,12 +8,12 @@ pipeline {
         }
         stage('Instalar Dependências') {
             steps {
-                bat 'npm install'
+                sh 'npm install'
             }
         }
         stage('Executar Testes') {
             steps {
-                bat 'set NO_COLOR=1 && npm run cy:run'
+                sh 'NO_COLOR=1 npm run cy:run'
             }
         }
     }
