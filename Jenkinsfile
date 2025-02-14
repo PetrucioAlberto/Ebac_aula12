@@ -1,21 +1,29 @@
 pipeline {
     agent any
+
+    environment {
+        CI = 'true'
+    }
+
     stages {
-        stage('Clonar o repositório') {
+        stage('Clonar Repositório') {
             steps {
                 git branch: 'main', url: 'https://github.com/PetrucioAlberto/Ebac_aula12'
             }
         }
+
         stage('Instalar Dependências') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
-        stage('Executar Testes') {
+
+        stage('Executar Testes Cypress') {
             steps {
-                sh 'NO_COLOR=1 npm run cy:run'
+                bat 'npx cypress run'
             }
         }
     }
 }
+
 
