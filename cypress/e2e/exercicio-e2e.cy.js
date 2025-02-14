@@ -19,9 +19,9 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
 
     // produto 1
     produtoPage.escolherProduto1_1( )
-    produtoPage.validarPagina('.product_title','Apollo Running Short')
-    produtoPage.escolhertamanho('.button-variable-item-', '33')
-    produtoPage.escolherCor('.variable-item.button-variable-item.button-variable-item-', 'Black')
+    produtoPage.validarPagina('.product_title','Ajax Full-Zip')
+    produtoPage.escolhertamanho('.button-variable-item-', 'M')
+    produtoPage.escolherCor('.variable-item.button-variable-item.button-variable-item-', 'Blue')
     produtoPage.botaoComprar('.single_add_to_cart_button')
 
      // produto 2

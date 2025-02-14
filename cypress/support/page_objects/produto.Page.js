@@ -32,8 +32,8 @@ class produtoPage{
     escolherProduto3_3(){
         cy.get('#primary-menu > .menu-item-629 > a').click();
         cy.get('.product').eq(5).click();
-        cy.get('.product_title').should('contain','Argus All-Weather Tank')
-        cy.get('.button-variable-item-M').click()
+        cy.get('.product_title').should('contain','Arcadio Gym Short')
+        cy.get('.button-variable-item-33').click()
         cy.get(':nth-child(2) > .value > .variable-items-wrapper > .variable-item')
         cy.get('.single_add_to_cart_button').click() 
     }
@@ -50,7 +50,7 @@ class produtoPage{
 
     verificarProdutosCarrinhos(){
         cy.get('.woocommerce-message > .button').click()
-        cy.get(':nth-child(1) > .product-name > a').should('contain', 'Apollo Running Short - 33, Black')
+        cy.get(':nth-child(1) > .product-name > a').should('contain', 'Ajax Full-Zip Sweatshirt - M, Blue')
         cy.get(':nth-child(2) > .product-name > a').should('contain', 'Eos V-Neck Hoodie - M, Green')
         cy.get(':nth-child(3) > .product-name > a').should('contain', 'Atlas Fitness Tank - L, Blue')
         cy.get('.checkout-button').click()
