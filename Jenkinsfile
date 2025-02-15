@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/PetrucioAlberto/Ebac_aula12'
+                git branch: 'main', url: 'https://github.com/PetrucioAlberto/Ebac_aula12'
             }
         }
         stage('Instalar Dependências') {
