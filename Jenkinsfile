@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                    
-                    sh 'npx cypress run --no-color'
+                    sh 'npx cypress run'
                 }
             }
         }
