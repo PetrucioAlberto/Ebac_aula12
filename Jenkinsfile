@@ -13,11 +13,17 @@ pipeline {
         }
         stage('Rodar Testes Cypress') {
             steps {
-                sh 'npx cypress run'
+                sh 'mkdir -p results && npx cypress run --no-color --reporter junit --reporter-options "mochaFile=results/test-results.xml"'
             }
         }
     }
+    post {
+        always {
+            junit 'results/test-results.xml'
+        }
+    }
 }
+
 
 
 
