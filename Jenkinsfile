@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Rodar Testes Cypress') {
             steps {
-                sh 'npx cypress run --no-color'
+                sh 'npx cypress run'
             }
         }
     }
