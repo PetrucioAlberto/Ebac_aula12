@@ -1,31 +1,22 @@
 pipeline {
     agent any
     environment {
-     
-        NO_COLOR = ''
-    }
-    tools {
-        nodejs "NodeJS" 
+        NO_COLOR = '1'
     }
     stages {
         stage('Instalar Dependências') {
             steps {
-                script {
-                    
-                    sh 'npm install'
-                }
+                sh 'npm install'
             }
         }
         stage('Rodar Testes Cypress') {
             steps {
-                script {
-                   
-                    sh 'npx cypress run'
-                }
+                sh 'npx cypress run --no-color'
             }
         }
     }
 }
+
 
 
 
