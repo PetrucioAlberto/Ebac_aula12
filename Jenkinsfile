@@ -3,6 +3,9 @@ pipeline {
     environment {
         NO_COLOR = '1'
     }
+    tools {
+        nodejs "NodeJS" 
+    }
     stages {
         stage('Instalar Dependências') {
             steps {
